@@ -4,7 +4,7 @@
     <header
       class="masthead"
       :style="{
-        backgroundImage: `url(${'http://106.75.231.218:1337/uploads/011.jpg'})`
+        backgroundImage: `url(${GRIDSOME_API_URL+$page.posts.edges[4].node.cover.url})`
       }"
     >
       <div class="overlay"></div>
@@ -29,7 +29,7 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-preview" v-for="edge in $page.posts.edges" :key="edge.node.id">
             <g-link :to="'/post/'+edge.node.id">
-              <img :src="'http://106.75.231.218:1337'+edge.node.cover.url" alt="" class="src" width="100%" height="700px" />
+              <img :src="GRIDSOME_API_URL+edge.node.cover.url" alt="" class="src" width="100%" height="700px" name="referrer" content="no-referrer"/>
               <h2 class="post-title" style="text-align:center;">{{edge.node.title}}</h2>
             </g-link>
             <!-- <p>
